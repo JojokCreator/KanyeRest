@@ -1,43 +1,18 @@
-# Talking To Servers Workshop
+# Kanye "Rest" simple webapp
 
-## A set of tasks to practice using fetch.
+## Built as part of School of Code during the 16 week bootcamp. Week 2 - Learning Api's.
 
-_ALWAYS AWAIT A PROMISE!_
+### Getting Started
 
-### Task 1 - The Fetch Bit
+To install clone the repo and open the index.html folder in a web browser
 
-In this task, we will fetch some data from a server. The data we receive will be in JSON format and will contain a quote. We will use fetch to send a GET request to `https://api.kanye.rest/` and will extract the data from the response object.
+### Prerequisites
 
-👉 Write an async function called `getQuote`.
+A simple web browser!
 
-👉 Use fetch to send a GET request to `https://api.kanye.rest/` and store the resolved value of the returned promise in a variable called `response`.
+### How it works
 
-👉 Call the `.json()` method on the response variable to parse the JSON data contained in the response object. Store the resolved value of the returned promise in a variable called `data`.
+It sends a simple fetch to send a GET request to `https://api.kanye.rest/` and will extract the data from the response object. The data received is in JSON format and then parsed and displayed on the page using a querySelector when the page loads.
 
-👉 Use that data to set the text of the `h1` with id `"kanye-quote"`.
+When the button is pressed the original quote is saved and displayed on the list on the bottom of the page. A new quote is retrieved and checked if it is a duplicate of one of the previous quotes. If it is it isn't saved.
 
-👉 Call this function as soon as the page loads.
-
-### Task 2 - On Click
-
-Sweet - we're getting a new Kanye West quote every time the page is refreshed. Let's make the page more interactive.
-
-👉 Attach an event listener to the button with id `"new-quote-button"` to call `getQuote` when the user clicks.
-
-### Task 3 - History
-
-We're now going to display every quote we fetch in a list so that we don't forget our favorites.
-
-👉 Create a function that takes in a string, creates a new list item with that string, and adds it to the `ol` with the id `"kanye-quote-history"`.
-
-👉 Call this function within your `getQuote` function so that the quotes get stored in the `"kanye-quote-history"` list.
-
-### 🌟 Bonus Task!
-
-You might see after a while that the quotes we fetch from the API are sometimes repeated.
-
-👉 Change your code so that if a repeat quote is generated, it will not be added to the list of previous quotes.
-
-#### 🌟 Bonus Bonus Task!
-
-👉 Have a quote added to the history list **only** when a new quote is generated so that the same quote is never on the screen in two places.
